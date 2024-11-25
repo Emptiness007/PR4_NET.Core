@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "AQ7wC3HcgAU=",
+  "dgSpecHash": "mLerNFOOr6a8DK078hKuQhrEm7GrCuKr1GToA4heU1UpJw2WzfbIrN5y2peUDkj+MlwxQKiZ0TQuQ7L1wO6j3Q==",
   "success": true,
-  "projectFilePath": "E:\\projects\\PR4\\PR4NETCORE\\Ftp\\Client\\Client.csproj",
+  "projectFilePath": "C:\\Users\\Владелец\\Desktop\\PR4_NET.Core\\Client\\Client.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\owchi\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\Владелец\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }

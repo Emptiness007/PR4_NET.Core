@@ -14,6 +14,19 @@
             "related": ".xml"
           }
         }
+      },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
       }
     }
   },
@@ -47,40 +60,56 @@
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
+    },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Common >= 1.0.0",
       "Newtonsoft.Json >= 13.0.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\owchi\\.nuget\\packages\\": {}
+    "C:\\Users\\Владелец\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\projects\\PR4\\PR4NETCORE\\Ftp\\Server\\Server.csproj",
+      "projectUniqueName": "C:\\Users\\Владелец\\Desktop\\PR4_NET.Core\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "E:\\projects\\PR4\\PR4NETCORE\\Ftp\\Server\\Server.csproj",
-      "packagesPath": "C:\\Users\\owchi\\.nuget\\packages\\",
-      "outputPath": "E:\\projects\\PR4\\PR4NETCORE\\Ftp\\Server\\obj\\",
+      "projectPath": "C:\\Users\\Владелец\\Desktop\\PR4_NET.Core\\Server\\Server.csproj",
+      "packagesPath": "C:\\Users\\Владелец\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Владелец\\Desktop\\PR4_NET.Core\\Server\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\owchi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Владелец\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Владелец\\Desktop\\PR4_NET.Core\\Common\\Common.csproj": {
+              "projectPath": "C:\\Users\\Владелец\\Desktop\\PR4_NET.Core\\Common\\Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -119,7 +148,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
       }
     }
   }
