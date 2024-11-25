@@ -177,6 +177,9 @@ namespace Client
 
                             byte[] byteFile = JsonConvert.DeserializeObject<byte[]>(viewModelMessage.Data);
                             File.WriteAllBytes(getFile, byteFile);
+                            string fileContent = Encoding.UTF8.GetString(byteFile);
+                            Console.WriteLine("Содержимое файла:");
+                            Console.WriteLine(fileContent); 
                         }
                     }
                 }

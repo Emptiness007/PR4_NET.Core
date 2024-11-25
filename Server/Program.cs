@@ -157,6 +157,7 @@ namespace Server
                         {
                             if (ViewModelSend.Id != -1)
                             {
+                                User user = userContext.user.Find(ViewModelSend.Id);
                                 string[] DataMessage = ViewModelSend.Message.Split(new string[1] { " " }, StringSplitOptions.None);
                                 string getFile = "";
                                 for (int i = 1; i < DataMessage.Length; i++)
@@ -166,7 +167,8 @@ namespace Server
                                     else
                                         getFile += " " + DataMessage[i];
                                 }
-                                byte[] byteFile = File.ReadAllBytes(Users[ViewModelSend.Id].temp_src + getFile);
+                                byte[] byteFile = File.ReadAllBytes(user.temp_src + getFile);
+                                Console.WriteLine(user.temp_src + getFile);
                                 viewModelMessage = new ViewModelMessage("file", JsonConvert.SerializeObject(byteFile));
                             }
                             else
@@ -181,9 +183,10 @@ namespace Server
                         {
                             if (ViewModelSend.Id != -1)
                             {
+                                User user = userContext.user.Find(ViewModelSend.Id);
                                 FileInfoFTP SendFileInfo = JsonConvert.DeserializeObject<FileInfoFTP>(ViewModelSend.Message);
-                                File.WriteAllBytes(Users[ViewModelSend.Id].temp_src + @"\" + SendFileInfo.Name, SendFileInfo.Data);
-                                viewModelMessage = new ViewModelMessage("message", "Файл зфгружен");
+                                File.WriteAllBytes(user.temp_src + @"\" + SendFileInfo.Name, SendFileInfo.Data);
+                                viewModelMessage = new ViewModelMessage("message", "Файл загружен");
                             }
                             else
                             {
