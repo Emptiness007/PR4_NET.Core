@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\projects\\PR4\\PR4NETCORE\\Ftp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{29E08006-EC98-438D-9C54-4EE463C52C56}|Client\\Client.csproj|e:\\projects\\pr4\\pr4netcore\\ftp\\client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29E08006-EC98-438D-9C54-4EE463C52C56}|Client\\Client.csproj|solutionrelative:client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CD36810-4BB4-4033-B91B-1ABF6585686A}|Common\\Common.csproj|e:\\projects\\pr4\\pr4netcore\\ftp\\common\\fileinfoftp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CD36810-4BB4-4033-B91B-1ABF6585686A}|Common\\Common.csproj|solutionrelative:common\\fileinfoftp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CD36810-4BB4-4033-B91B-1ABF6585686A}|Common\\Common.csproj|e:\\projects\\pr4\\pr4netcore\\ftp\\common\\viewmodelsend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CD36810-4BB4-4033-B91B-1ABF6585686A}|Common\\Common.csproj|solutionrelative:common\\viewmodelsend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CD36810-4BB4-4033-B91B-1ABF6585686A}|Common\\Common.csproj|e:\\projects\\pr4\\pr4netcore\\ftp\\common\\viewmodelmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CD36810-4BB4-4033-B91B-1ABF6585686A}|Common\\Common.csproj|solutionrelative:common\\viewmodelmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CD36810-4BB4-4033-B91B-1ABF6585686A}|Common\\Common.csproj|e:\\projects\\pr4\\pr4netcore\\ftp\\common\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CD36810-4BB4-4033-B91B-1ABF6585686A}|Common\\Common.csproj|solutionrelative:common\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC31FDFD-07DA-44C9-8E13-73550A16A4F8}|Server\\Server.csproj|e:\\projects\\pr4\\pr4netcore\\ftp\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC31FDFD-07DA-44C9-8E13-73550A16A4F8}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FileInfoFTP.cs",
+              "DocumentMoniker": "E:\\projects\\PR4\\PR4NETCORE\\Ftp\\Common\\FileInfoFTP.cs",
+              "RelativeDocumentMoniker": "Common\\FileInfoFTP.cs",
+              "ToolTip": "E:\\projects\\PR4\\PR4NETCORE\\Ftp\\Common\\FileInfoFTP.cs",
+              "RelativeToolTip": "Common\\FileInfoFTP.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T15:07:05.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ViewModelSend.cs",
+              "DocumentMoniker": "E:\\projects\\PR4\\PR4NETCORE\\Ftp\\Common\\ViewModelSend.cs",
+              "RelativeDocumentMoniker": "Common\\ViewModelSend.cs",
+              "ToolTip": "E:\\projects\\PR4\\PR4NETCORE\\Ftp\\Common\\ViewModelSend.cs",
+              "RelativeToolTip": "Common\\ViewModelSend.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T15:06:50.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ViewModelMessage.cs",
+              "DocumentMoniker": "E:\\projects\\PR4\\PR4NETCORE\\Ftp\\Common\\ViewModelMessage.cs",
+              "RelativeDocumentMoniker": "Common\\ViewModelMessage.cs",
+              "ToolTip": "E:\\projects\\PR4\\PR4NETCORE\\Ftp\\Common\\ViewModelMessage.cs",
+              "RelativeToolTip": "Common\\ViewModelMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T15:06:38.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\projects\\PR4\\PR4NETCORE\\Ftp\\Client\\Program.cs",
+              "RelativeDocumentMoniker": "Client\\Program.cs",
+              "ToolTip": "E:\\projects\\PR4\\PR4NETCORE\\Ftp\\Client\\Program.cs",
+              "RelativeToolTip": "Client\\Program.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAqwCUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T15:04:56.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\projects\\PR4\\PR4NETCORE\\Ftp\\Common\\User.cs",
+              "RelativeDocumentMoniker": "Common\\User.cs",
+              "ToolTip": "E:\\projects\\PR4\\PR4NETCORE\\Ftp\\Common\\User.cs",
+              "RelativeToolTip": "Common\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T15:05:08.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\projects\\PR4\\PR4NETCORE\\Ftp\\Server\\Program.cs",
+              "RelativeDocumentMoniker": "Server\\Program.cs",
+              "ToolTip": "E:\\projects\\PR4\\PR4NETCORE\\Ftp\\Server\\Program.cs",
+              "RelativeToolTip": "Server\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T15:04:31.524Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
