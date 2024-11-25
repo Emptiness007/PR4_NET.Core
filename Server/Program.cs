@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Net;
 using System.Text;
 using Common;
+using Common.Database;
 
 namespace Server
 {
@@ -16,7 +17,6 @@ namespace Server
         public static int Port;
         static void Main(string[] args)
         {
-            Users.Add(new User("aooshepkov", "Asdfg123", @"A:\Авиатехникум"));
             Console.Write("Введите Ip адрес сервера: ");
             string sIpAdress = Console.ReadLine();
             Console.Write("Введите порт: ");
@@ -25,10 +25,24 @@ namespace Server
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Данные успешно введены. Запуская сервер.");
+                Users = LoadUsers();
+                Console.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
                 StartServer();
             }
             Console.Read();
         }
+
+        private static List<User> LoadUsers()
+        {
+            List<User> users = new List<User>();
+            UserContext userContext = new UserContext();
+            foreach (User user in userContext.user)
+            {
+                users.Add(user);
+            }
+            return users;
+        }
+
         public static bool AuthorizationUser(string login, string password)
         {
             User user = null;
@@ -57,6 +71,7 @@ namespace Server
         }
         public static void StartServer()
         {
+            UserContext userContext = new UserContext();
             IPEndPoint endPoint = new IPEndPoint(IpAddress, Port);
             Socket sListener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             sListener.Bind(endPoint);
@@ -84,7 +99,8 @@ namespace Server
                             string[] DataMessage = ViewModelSend.Message.Split(new string[1] { " " }, StringSplitOptions.None);
                             if (AuthorizationUser(DataMessage[1], DataMessage[2]))
                             {
-                                int IdUser = Users.FindIndex(x => x.login == DataMessage[1] && x.password == DataMessage[2]);
+                                int IdUser = Users.Find(x => x.login == DataMessage[1] && x.password == DataMessage[2]).id;
+                                Console.WriteLine(IdUser);
                                 viewModelMessage = new ViewModelMessage("authorization", IdUser.ToString());
                             }
                             else
@@ -101,10 +117,14 @@ namespace Server
                             {
                                 string[] DataMessage = ViewModelSend.Message.Split(new string[1] { " " }, StringSplitOptions.None);
                                 List<string> FolderFiles = new List<string>();
+                                User user = userContext.user.Find(ViewModelSend.Id);
                                 if (DataMessage.Length == 1)
                                 {
-                                    Users[ViewModelSend.Id].temp_src = Users[ViewModelSend.Id].src;
-                                    FolderFiles = GetDirectory(Users[ViewModelSend.Id].src);
+                                    
+                                    user.temp_src = user.src;
+                                    
+                                    userContext.SaveChanges();
+                                    FolderFiles = GetDirectory(user.src);
                                 }
                                 else
                                 {
@@ -116,8 +136,9 @@ namespace Server
                                         else
                                             cdFolder += " " + DataMessage[i];
                                     }
-                                    Users[ViewModelSend.Id].temp_src = Users[ViewModelSend.Id].temp_src + cdFolder;
-                                    FolderFiles = GetDirectory(Users[ViewModelSend.Id].temp_src);
+                                    user.temp_src = user.temp_src + cdFolder;
+                                    userContext.SaveChanges();
+                                    FolderFiles = GetDirectory(user.temp_src);
                                 }
                                 if (FolderFiles.Count == 0)
                                     viewModelMessage = new ViewModelMessage("message", "Директория пуста или не существует.");
