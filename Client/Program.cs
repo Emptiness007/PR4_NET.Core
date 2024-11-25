@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using Common;
 using System.IO;
+using Common.Database;
 
 namespace Client
 {
@@ -52,7 +53,23 @@ namespace Client
                         Console.WriteLine("Использование: connect [login] [password]\nПример: connect User1 Password");
                         BCommand = false;
                     }
-                    else BCommand = true;
+                    else
+                    {
+                        BCommand = true;
+                        var users = new UserContext();
+                        int id = -1;
+                        foreach (User user in users.user)
+                        {
+                            if (user.login == DataMessage[1] && user.password == DataMessage[2])
+                            {
+                                id = user.id;
+                                break;
+                            }
+                            else id = -1;
+                                
+                        }
+                        Id = id;
+                    }
                 }
                 else if (Command == "cd") BCommand = true;
                 else if (Command == "get")
