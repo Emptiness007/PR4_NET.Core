@@ -24,5 +24,20 @@ namespace FtpWPF
         {
             InitializeComponent();
         }
+
+        private void TreeViewFolders(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void DownloadFiles(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SaveFile(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

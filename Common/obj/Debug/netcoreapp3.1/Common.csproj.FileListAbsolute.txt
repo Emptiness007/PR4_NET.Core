@@ -1,0 +1,11 @@
+C:\Users\Владелец\Desktop\PR4_NET.Core\Common\bin\Debug\netcoreapp3.1\Common.deps.json
+C:\Users\Владелец\Desktop\PR4_NET.Core\Common\bin\Debug\netcoreapp3.1\Common.dll
+C:\Users\Владелец\Desktop\PR4_NET.Core\Common\bin\Debug\netcoreapp3.1\Common.pdb
+C:\Users\Владелец\Desktop\PR4_NET.Core\Common\obj\Debug\netcoreapp3.1\Common.csproj.AssemblyReference.cache
+C:\Users\Владелец\Desktop\PR4_NET.Core\Common\obj\Debug\netcoreapp3.1\Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Владелец\Desktop\PR4_NET.Core\Common\obj\Debug\netcoreapp3.1\Common.AssemblyInfoInputs.cache
+C:\Users\Владелец\Desktop\PR4_NET.Core\Common\obj\Debug\netcoreapp3.1\Common.AssemblyInfo.cs
+C:\Users\Владелец\Desktop\PR4_NET.Core\Common\obj\Debug\netcoreapp3.1\Common.csproj.CoreCompileInputs.cache
+C:\Users\Владелец\Desktop\PR4_NET.Core\Common\obj\Debug\netcoreapp3.1\Common.sourcelink.json
+C:\Users\Владелец\Desktop\PR4_NET.Core\Common\obj\Debug\netcoreapp3.1\Common.dll
+C:\Users\Владелец\Desktop\PR4_NET.Core\Common\obj\Debug\netcoreapp3.1\Common.pdb
