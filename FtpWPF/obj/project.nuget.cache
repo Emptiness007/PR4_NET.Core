@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "22f2syRz/m4w6dmW+OP3e8d3ddug60MYPoCuj34g2fYpsjMKF/BrebDgIQD5xqzBP1EZdDvyUXDXqRxUZdVmaw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Владелец\\Desktop\\PR4_NET.Core\\FtpWPF\\FtpWPF.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Владелец\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\Владелец\\.nuget\\packages\\wpf-ui\\3.0.5\\wpf-ui.3.0.5.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"WPF-UI 3.0.5\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \".NETCoreApp,Version=v3.1\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "WPF-UI",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}
