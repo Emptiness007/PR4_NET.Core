@@ -7,6 +7,7 @@ using System.Text;
 using Common;
 using System.IO;
 using Common.Database;
+using System.Windows;
 
 namespace Client
 {
@@ -34,6 +35,7 @@ namespace Client
                     ConnectServer();
                 }
             }
+
         }
 
         public static bool CheckCommand(string message)
