@@ -1,0 +1,66 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "FtpWPF/1.0.0": {
+        "dependencies": {
+          "WPF-UI": "3.0.5",
+          "EtherealWind": "1.3.0.3"
+        },
+        "runtime": {
+          "FtpWPF.dll": {}
+        }
+      },
+      "System.ValueTuple/4.5.0": {},
+      "WPF-UI/3.0.5": {
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "runtime": {
+          "lib/net462/Wpf.Ui.dll": {
+            "assemblyVersion": "3.0.5.0",
+            "fileVersion": "3.0.5.0"
+          }
+        }
+      },
+      "EtherealWind/1.3.0.3": {
+        "runtime": {
+          "EtherealWind.dll": {
+            "assemblyVersion": "1.3.0.3",
+            "fileVersion": "1.3.0.3"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FtpWPF/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.ValueTuple/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
+      "path": "system.valuetuple/4.5.0",
+      "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
+    },
+    "WPF-UI/3.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vha596eFVZ0j/zjpPrYxqaBNZzr17ROOihQ/xqgTVPMx5cmHAVKPulbaUmHKXo0QHGkqvwaPNxYH/HTS/UroTQ==",
+      "path": "wpf-ui/3.0.5",
+      "hashPath": "wpf-ui.3.0.5.nupkg.sha512"
+    },
+    "EtherealWind/1.3.0.3": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
