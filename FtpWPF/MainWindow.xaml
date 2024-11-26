@@ -1,0 +1,39 @@
+﻿<Window x:Class="FtpWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        xmlns:local="clr-namespace:FtpWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" MinHeight="450" MinWidth="800" WindowStyle="None" AllowsTransparency="True" Background="Transparent" MouseDown="Grid_MouseDown">
+    <Grid Background="#3C3F41" Opacity="0.85">
+        <Grid VerticalAlignment="Top" Height="30">
+            <ui:Button Height="30" Width="40" HorizontalAlignment="Right" Background="Transparent" BorderBrush="Transparent" Icon="{ui:SymbolIcon Dismiss24}" Click="Close"/>
+            <ui:Button x:Name="fullScreenButton" Height="30" Width="40" HorizontalAlignment="Right" Background="Transparent" BorderBrush="Transparent" Icon="{ui:SymbolIcon FullScreenMaximize24}" Margin="0,0,40,0" Click="ToggleFullScreen_Click"/>
+        </Grid>
+        <Grid Height="30" Margin="10,30,10,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Текущий путь: " Foreground="White" FontFamily="Consolas" FontSize="14" Grid.Column="0" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="path" Text="путь " Foreground="White" FontFamily="Consolas" FontSize="14" Grid.Column="1" VerticalAlignment="Bottom"/>
+        </Grid>
+        <ScrollViewer Margin="0,70,0,50" VerticalScrollBarVisibility="Auto">
+           <TreeView Name="treeViewFolders" MouseDoubleClick="TreeViewFolders" AllowDrop="True" Background="Transparent" >
+                <TreeViewItem Tag="Root" Foreground="White" FontFamily="Consolas">
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Symbol="Folder24"/>
+                            <TextBlock Text="Корневая папка" Foreground="White" FontFamily="Consolas" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+            </TreeView> 
+        </ScrollViewer>
+        <ui:Button Content="Сохранить" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,10" Background="#B2000000" Click="DownloadFiles"/>
+        <ui:Button Content="Загрузить" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,110,10" Background="#B2000000" Click="SaveFile"/>
+        <Image x:Name="bottomGif" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="70" Height="70" />
+    </Grid>
+</Window>
