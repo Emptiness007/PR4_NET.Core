@@ -8,10 +8,13 @@ namespace Common
     {
         public string Message { get; set; }
         public int Id { get; set; }
+        public int idUser { get; set; }
         public ViewModelSend(string message, int Id)
         {
             this.Message = message;
             this.Id = Id;
         }
+
+        public ViewModelSend() { }
     }
 }

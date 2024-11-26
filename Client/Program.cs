@@ -82,7 +82,10 @@ namespace Client
                         Console.WriteLine("Использование: get [NameFile]\nПример: get Test.txt");
                         BCommand = false;
                     }
-                    else BCommand = true;
+                    else
+                    {
+                        BCommand= true;
+                    }
                 }
                 else if (Command == "set")
                 {
@@ -117,7 +120,12 @@ namespace Client
                     if (CheckCommand(message))
                     {
                         ViewModelSend viewModelSend = new ViewModelSend(message, Id);
-
+                        ViewModelSend mes = new ViewModelSend();
+                        mes.idUser = Id;
+                        mes.Message = message;
+                        ViewModelSendContext viewModelSendContext = new ViewModelSendContext();
+                        viewModelSendContext.Add(mes);
+                        viewModelSendContext.SaveChanges();
                         if (message.Split(new string[1] { " " }, StringSplitOptions.None)[0] == "set")
                         {
                             string[] DataMessage = message.Split(new string[1] { " " }, StringSplitOptions.None);
@@ -136,6 +144,7 @@ namespace Client
                                 FileInfo FileInfo = new FileInfo(NameFile);
                                 FileInfoFTP NewFileInfo = new FileInfoFTP(File.ReadAllBytes(NameFile), FileInfo.Name);
                                 viewModelSend = new ViewModelSend(JsonConvert.SerializeObject(NewFileInfo), Id);
+
                             }
                             else
                             {
