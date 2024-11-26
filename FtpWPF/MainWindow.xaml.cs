@@ -25,11 +25,80 @@ namespace FtpWPF
         public MainWindow()
         {
             InitializeComponent();
-            EtherealWind.Tools.ImageExtensions imageExtensions = new EtherealWind.Tools.ImageExtensions();
-            string gifPath = System.IO.Path.Combine(Directory.GetCurrentDirectory() + "/Gif/");
-            BitmapImage[] frames = imageExtensions.BitmapsInit(gifPath, "png", 20);
-            imageExtensions.PlayAsGif(bottomGif, frames, 5.0, true);
+            OpenPage();
         }
+
+        public void OpenPage()
+        {
+            frame.Navigate(new main());
+        }
+
+        //private void AddItemsFromList(List<string> items)
+        //{
+        //    // Находим родительский элемент (корневой) по тегу
+        //    System.Windows.Controls.TreeViewItem parentItem = FindTreeViewItemByTag(treeViewFolders, "Root");
+        //    if (parentItem != null)
+        //    {
+        //        // Перебираем список строк и добавляем каждый элемент в дерево
+        //        foreach (var item in items)
+        //        {
+        //            System.Windows.Controls.TreeViewItem newItem = new System.Windows.Controls.TreeViewItem
+        //            {
+        //                Header = new System.Windows.Controls.TextBlock
+        //                {
+        //                    Text = item,
+        //                    Foreground = System.Windows.Media.Brushes.White,
+        //                    FontFamily = new System.Windows.Media.FontFamily("Consolas"),
+        //                    Margin = new System.Windows.Thickness(5, 0, 0, 0)
+        //                },
+        //                Tag = item
+        //            };
+
+        //            // Добавляем новый элемент к родительскому
+        //            parentItem.Items.Add(newItem);
+        //        }
+        //    }
+        //}
+
+        //// Метод для поиска элемента по тегу в дереве
+        //private System.Windows.Controls.TreeViewItem FindTreeViewItemByTag(TreeView treeView, string tag)
+        //{
+        //    foreach (System.Windows.Controls.TreeViewItem item in treeView.Items)
+        //    {
+        //        if (item.Tag.ToString() == tag)
+        //        {
+        //            return item;
+        //        }
+
+        //        // Рекурсивно ищем в дочерних элементах
+        //        System.Windows.Controls.TreeViewItem foundItem = FindTreeViewItemByTagRecursive(item, tag);
+        //        if (foundItem != null)
+        //        {
+        //            return foundItem;
+        //        }
+        //    }
+        //    return null;
+        //}
+
+        //// Рекурсивный метод для поиска элемента в поддеревьях
+        //private System.Windows.Controls.TreeViewItem FindTreeViewItemByTagRecursive(System.Windows.Controls.TreeViewItem parentItem, string tag)
+        //{
+        //    foreach (System.Windows.Controls.TreeViewItem item in parentItem.Items)
+        //    {
+        //        if (item.Tag.ToString() == tag)
+        //        {
+        //            return item;
+        //        }
+
+        //        // Рекурсивно ищем в дочерних элементах
+        //        System.Windows.Controls.TreeViewItem foundItem = FindTreeViewItemByTagRecursive(item, tag);
+        //        if (foundItem != null)
+        //        {
+        //            return foundItem;
+        //        }
+        //    }
+        //    return null;
+        //}
 
         private void TreeViewFolders(object sender, MouseButtonEventArgs e)
         {

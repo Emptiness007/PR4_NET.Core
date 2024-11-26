@@ -8,34 +8,42 @@ using Common;
 using System.IO;
 using Common.Database;
 using System.Windows;
-
+using System.Diagnostics;
 namespace Client
 {
     public class Program
     {
 
-        public static IPAddress IPAddress;
-        public static int Port;
+        public static IPAddress IPAddress = IPAddress.Parse("127.0.0.1");
+        public static int Port = 5000;
+        public static List<string> folders = new List<string>();
         public static int Id = -1;
 
+        [STAThread]
         static void Main(string[] args)
         {
+            
             Console.WriteLine("Введите IP адрес сервера: ");
             string sIpAdress = Console.ReadLine();
 
             Console.WriteLine("Введите порт: ");
             string sPort = Console.ReadLine();
-
             if (int.TryParse(sPort, out Port) && IPAddress.TryParse(sIpAdress, out IPAddress))
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Данные успешно введены. Подключаюсь к серверу.");
+
                 while (true)
                 {
                     ConnectServer();
                 }
             }
 
+        }
+
+        public static IPAddress GetIp()
+        {
+            return IPAddress;
         }
 
         public static bool CheckCommand(string message)
@@ -168,6 +176,7 @@ namespace Client
                         {
                             List<string> FoldersFiles = new List<string>();
                             FoldersFiles = JsonConvert.DeserializeObject<List<string>>(viewModelMessage.Data);
+                            folders = FoldersFiles;
                             foreach (string Name in FoldersFiles)
                             {
                                 Console.WriteLine(Name);

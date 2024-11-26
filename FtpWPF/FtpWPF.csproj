@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Client\Client.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="EtherealWind">
       <HintPath>EtherealWind.dll</HintPath>
     </Reference>

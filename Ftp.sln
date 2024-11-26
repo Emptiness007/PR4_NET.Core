@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{6CD36810-4BB4-4033-B91B-1ABF6585686A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FtpWPF", "FtpWPF\FtpWPF.csproj", "{94BDBB9A-0E4A-4223-8D19-B6811F31CCEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{6CD36810-4BB4-4033-B91B-1ABF6585686A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CD36810-4BB4-4033-B91B-1ABF6585686A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CD36810-4BB4-4033-B91B-1ABF6585686A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94BDBB9A-0E4A-4223-8D19-B6811F31CCEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94BDBB9A-0E4A-4223-8D19-B6811F31CCEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94BDBB9A-0E4A-4223-8D19-B6811F31CCEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94BDBB9A-0E4A-4223-8D19-B6811F31CCEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
