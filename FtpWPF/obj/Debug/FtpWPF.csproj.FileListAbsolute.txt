@@ -18,3 +18,5 @@ C:\Users\Владелец\Desktop\PR4_NET.Core\FtpWPF\obj\Debug\FtpWPF.csproj.Co
 C:\Users\Владелец\Desktop\PR4_NET.Core\FtpWPF\obj\Debug\FtpWPF.csproj.Up2Date
 C:\Users\Владелец\Desktop\PR4_NET.Core\FtpWPF\obj\Debug\FtpWPF.exe
 C:\Users\Владелец\Desktop\PR4_NET.Core\FtpWPF\obj\Debug\FtpWPF.pdb
+C:\Users\Владелец\Desktop\PR4_NET.Core\FtpWPF\bin\Debug\EtherealWind.dll
+C:\Users\Владелец\Desktop\PR4_NET.Core\FtpWPF\obj\Debug\FtpWPF_Content.g.cs

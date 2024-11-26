@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EtherealWind, Version=1.3.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\EtherealWind.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -97,6 +101,29 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EtherealWind.dll" />
+    <Resource Include="Gif\0.png" />
+    <Resource Include="Gif\1.png" />
+    <Resource Include="Gif\10.png" />
+    <Resource Include="Gif\11.png" />
+    <Resource Include="Gif\12.png" />
+    <Resource Include="Gif\13.png" />
+    <Resource Include="Gif\14.png" />
+    <Resource Include="Gif\15.png" />
+    <Resource Include="Gif\16.png" />
+    <Resource Include="Gif\17.png" />
+    <Resource Include="Gif\18.png" />
+    <Resource Include="Gif\19.png" />
+    <Resource Include="Gif\2.png" />
+    <Resource Include="Gif\3.png" />
+    <Resource Include="Gif\4.png" />
+    <Resource Include="Gif\5.png" />
+    <Resource Include="Gif\6.png" />
+    <Resource Include="Gif\7.png" />
+    <Resource Include="Gif\8.png" />
+    <Resource Include="Gif\9.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -215,10 +215,7 @@
           "Pomelo.EntityFrameworkCore.MySql": "5.0.0"
         },
         "runtime": {
-          "Common.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Common.dll": {}
         }
       }
     }
