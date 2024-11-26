@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\projects\\PR4\\PR4_NET.Core\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6CD36810-4BB4-4033-B91B-1ABF6585686A}|Common\\Common.csproj|e:\\projects\\pr4\\pr4_net.core\\common\\viewmodelmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CD36810-4BB4-4033-B91B-1ABF6585686A}|Common\\Common.csproj|solutionrelative:common\\viewmodelmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4951F4F-9205-4770-BEC9-5D14939A8A43}|FtpWPF\\FtpWPF.csproj|e:\\projects\\pr4\\pr4_net.core\\ftpwpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F4951F4F-9205-4770-BEC9-5D14939A8A43}|FtpWPF\\FtpWPF.csproj|solutionrelative:ftpwpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4951F4F-9205-4770-BEC9-5D14939A8A43}|FtpWPF\\FtpWPF.csproj|e:\\projects\\pr4\\pr4_net.core\\ftpwpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4951F4F-9205-4770-BEC9-5D14939A8A43}|FtpWPF\\FtpWPF.csproj|solutionrelative:ftpwpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +22,49 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ViewModelMessage.cs",
+              "DocumentMoniker": "E:\\projects\\PR4\\PR4_NET.Core\\Common\\ViewModelMessage.cs",
+              "RelativeDocumentMoniker": "Common\\ViewModelMessage.cs",
+              "ToolTip": "E:\\projects\\PR4\\PR4_NET.Core\\Common\\ViewModelMessage.cs",
+              "RelativeToolTip": "Common\\ViewModelMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T14:48:14.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "E:\\projects\\PR4\\PR4_NET.Core\\FtpWPF\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "FtpWPF\\MainWindow.xaml",
+              "ToolTip": "E:\\projects\\PR4\\PR4_NET.Core\\FtpWPF\\MainWindow.xaml",
+              "RelativeToolTip": "FtpWPF\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-26T14:48:06.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "E:\\projects\\PR4\\PR4_NET.Core\\FtpWPF\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "FtpWPF\\MainWindow.xaml.cs",
+              "ToolTip": "E:\\projects\\PR4\\PR4_NET.Core\\FtpWPF\\MainWindow.xaml.cs",
+              "RelativeToolTip": "FtpWPF\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T14:48:05.126Z",
+              "EditorCaption": ""
             }
           ]
         }

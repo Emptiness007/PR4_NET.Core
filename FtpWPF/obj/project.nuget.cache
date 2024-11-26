@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "22f2syRz/m4w6dmW+OP3e8d3ddug60MYPoCuj34g2fYpsjMKF/BrebDgIQD5xqzBP1EZdDvyUXDXqRxUZdVmaw==",
+  "dgSpecHash": "holI3CS9uOM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Владелец\\Desktop\\PR4_NET.Core\\FtpWPF\\FtpWPF.csproj",
+  "projectFilePath": "E:\\projects\\PR4\\PR4_NET.Core\\FtpWPF\\FtpWPF.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Владелец\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
-    "C:\\Users\\Владелец\\.nuget\\packages\\wpf-ui\\3.0.5\\wpf-ui.3.0.5.nupkg.sha512"
+    "C:\\Users\\owchi\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\owchi\\.nuget\\packages\\wpf-ui\\3.0.5\\wpf-ui.3.0.5.nupkg.sha512"
   ],
   "logs": [
     {

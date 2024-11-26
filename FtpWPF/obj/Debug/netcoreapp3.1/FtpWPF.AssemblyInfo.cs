@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FtpWPF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d3708ec8d9a0ec52c03510d6c9478b12bcb488a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+53ebfb5bdb04ffdefcdf95645597916520004acf")]
 [assembly: System.Reflection.AssemblyProductAttribute("FtpWPF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FtpWPF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
