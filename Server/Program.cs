@@ -90,6 +90,12 @@ namespace Server
                     Console.Write("Сообщение от пользователя: " + Data + "\n");
                     string Reply = "";
                     ViewModelSend ViewModelSend = JsonConvert.DeserializeObject<ViewModelSend>(Data);
+                    ViewModelSend mes = new ViewModelSend();
+                    mes.idUser = ViewModelSend.Id;
+                    mes.Message = ViewModelSend.Message;
+                    ViewModelSendContext viewModelSendContext = new ViewModelSendContext();
+                    viewModelSendContext.Add(mes);
+                    viewModelSendContext.SaveChanges();
                     if (ViewModelSend != null)
                     {
                         ViewModelMessage viewModelMessage;

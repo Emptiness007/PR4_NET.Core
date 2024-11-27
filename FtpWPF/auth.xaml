@@ -27,7 +27,7 @@
                 <TextBlock Text="Введите пароль: " Foreground="White" FontFamily="Consolas" FontSize="14" VerticalAlignment="Bottom"/>
                 <TextBox x:Name="password" Background="Transparent" BorderBrush="Transparent" Text="test1" Foreground="White" FontFamily="Consolas" Padding="0" VerticalContentAlignment="Bottom"/>
             </StackPanel>
-            <ui:Button Content="Соединение" HorizontalAlignment="Right" Background="#B2000000" Click="Login"/>
+            <ui:Button Content="Соединение" HorizontalAlignment="Center" Background="#B2000000" Margin="0,15,0,0" Click="Login"/>
         </StackPanel>
         
         <Image x:Name="bottomGif" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="70" Height="70" />

@@ -40,6 +40,38 @@ namespace FtpWPF
             {
                 AddTreeViewItemWithIcon(drive.Name);
             }
+            SendMessage();
+        }
+
+        private void SendMessage()
+        {
+            try
+            {
+                IPEndPoint endPoint = new IPEndPoint(MainWindow.IPAddress, MainWindow.Port);
+                Socket socket = new Socket(
+                    AddressFamily.InterNetwork,
+                    SocketType.Stream,
+                    ProtocolType.Tcp);
+                socket.Connect(endPoint);
+
+                if (socket.Connected)
+                {
+
+                    string message = $"cd";
+                    ViewModelSend viewModelSend = new ViewModelSend(message, MainWindow.Id);
+                    byte[] messageByte = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(viewModelSend));
+                    int BytesSend = socket.Send(messageByte);
+                    byte[] bytes = new byte[10485760];
+                    int BytesRec = socket.Receive(bytes);
+                    string messageServer = Encoding.UTF8.GetString(bytes, 0, BytesRec);
+                    ViewModelMessage viewModelMessage = JsonConvert.DeserializeObject<ViewModelMessage>(messageServer);
+                }
+                socket.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Подключение не удалось!");
+            }
         }
 
         private void GetCurrentDirectory(string dir)
@@ -53,7 +85,7 @@ namespace FtpWPF
 
             if (socket.Connected)
             {
-                string message = "cd D:\\";
+                string message = "cd " + dir;
                 ViewModelSend viewModelSend = new ViewModelSend(message, 1);
                 byte[] messageByte = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(viewModelSend));
                 int BytesSend = socket.Send(messageByte);
@@ -118,7 +150,6 @@ namespace FtpWPF
 
         private void TreeViewItem_Click(object sender, MouseButtonEventArgs e)
         {
-
             System.Windows.Controls.TreeViewItem clickedItem = sender as System.Windows.Controls.TreeViewItem;
 
             if (clickedItem != null)
@@ -130,47 +161,72 @@ namespace FtpWPF
                     if (textBlock != null)
                     {
                         string directoryName = textBlock.Text;
-                        GetCurrentDirectory(directoryName);
+
+                        string currentPath = GetCurrentDirectoryPath(directoryName);
+
+                        if (clickedItem.Items.Count == 0)
+                        {
+                            AddSubDirectories(clickedItem, currentPath);
+                        }
                     }
                 }
             }
         }
 
-        private System.Windows.Controls.TreeViewItem FindTreeViewItemByTag(TreeView treeView, string tag)
+        private string GetCurrentDirectoryPath(string directoryName)
         {
-            foreach (System.Windows.Controls.TreeViewItem item in treeView.Items)
-            {
-                if (item.Tag.ToString() == tag)
-                {
-                    return item;
-                }
-
-                System.Windows.Controls.TreeViewItem foundItem = FindTreeViewItemByTagRecursive(item, tag);
-                if (foundItem != null)
-                {
-                    return foundItem;
-                }
-            }
-            return null;
+            return System.IO.Path.Combine(@"D:\", directoryName);
         }
 
-        private System.Windows.Controls.TreeViewItem FindTreeViewItemByTagRecursive(System.Windows.Controls.TreeViewItem parentItem, string tag)
+        private void AddSubDirectories(TreeViewItem parentItem, string directoryPath)
         {
-            foreach (System.Windows.Controls.TreeViewItem item in parentItem.Items)
+            try
             {
-                if (item.Tag.ToString() == tag)
-                {
-                    return item;
-                }
+                string[] subdirectories = Directory.GetDirectories(directoryPath);
 
-                System.Windows.Controls.TreeViewItem foundItem = FindTreeViewItemByTagRecursive(item, tag);
-                if (foundItem != null)
+                foreach (var subdirectory in subdirectories)
                 {
-                    return foundItem;
+                    string subdirectoryName = System.IO.Path.GetFileName(subdirectory);
+                    AddTreeViewItemWithIconToParent(parentItem, subdirectoryName);
                 }
             }
-            return null;
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading subdirectories: {ex.Message}");
+            }
         }
+
+        private void AddTreeViewItemWithIconToParent(TreeViewItem parentItem, string subdirectoryName)
+        {
+            TreeViewItem subItem = new TreeViewItem
+            {
+                Tag = subdirectoryName
+            };
+
+            StackPanel stackPanel = new StackPanel
+            {
+                Orientation = Orientation.Horizontal
+            };
+
+            Wpf.Ui.Controls.SymbolIcon icon = new Wpf.Ui.Controls.SymbolIcon(Wpf.Ui.Controls.SymbolRegular.Folder24);
+
+            TextBlock textBlock = new TextBlock
+            {
+                Text = subdirectoryName,
+                Foreground = System.Windows.Media.Brushes.White,
+                FontFamily = new System.Windows.Media.FontFamily("Consolas"),
+                Margin = new System.Windows.Thickness(5, 0, 0, 0)
+            };
+
+            stackPanel.Children.Add(icon);
+            stackPanel.Children.Add(textBlock);
+
+            subItem.Header = stackPanel;
+            subItem.MouseDoubleClick += TreeViewItem_Click;
+
+            parentItem.Items.Add(subItem);
+        }
+
     }
 
 }

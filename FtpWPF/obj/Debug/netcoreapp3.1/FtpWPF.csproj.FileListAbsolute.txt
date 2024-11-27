@@ -76,3 +76,5 @@ E:\projects\PR4\PR4_NET.Core\FtpWPF\bin\Debug\netcoreapp3.1\Client.dll
 E:\projects\PR4\PR4_NET.Core\FtpWPF\bin\Debug\netcoreapp3.1\Common.dll
 E:\projects\PR4\PR4_NET.Core\FtpWPF\bin\Debug\netcoreapp3.1\Client.pdb
 E:\projects\PR4\PR4_NET.Core\FtpWPF\bin\Debug\netcoreapp3.1\Common.pdb
+E:\projects\PR4\PR4_NET.Core\FtpWPF\obj\Debug\netcoreapp3.1\auth.g.cs
+E:\projects\PR4\PR4_NET.Core\FtpWPF\obj\Debug\netcoreapp3.1\auth.baml

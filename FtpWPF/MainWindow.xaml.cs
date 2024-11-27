@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,15 +23,22 @@ namespace FtpWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public static int Id = -1;
+        public static int Port;
+        public static MainWindow mainWindow;
+        public static IPAddress IPAddress;
+
         public MainWindow()
         {
             InitializeComponent();
+            mainWindow = this;
             OpenPage();
         }
 
         public void OpenPage()
         {
-            frame.Navigate(new main());
+            frame.Navigate(new auth());
         }
 
         //private void AddItemsFromList(List<string> items)
