@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{94BDBB9A-0E4A-4223-8D19-B6811F31CCEB}|FtpWPF\\FtpWPF.csproj|solutionrelative:ftpwpf\\main.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{94BDBB9A-0E4A-4223-8D19-B6811F31CCEB}|FtpWPF\\FtpWPF.csproj|e:\\projects\\pr4\\pr4_net.core\\ftpwpf\\main.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{94BDBB9A-0E4A-4223-8D19-B6811F31CCEB}|FtpWPF\\FtpWPF.csproj|solutionrelative:ftpwpf\\main.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{94BDBB9A-0E4A-4223-8D19-B6811F31CCEB}|FtpWPF\\FtpWPF.csproj|e:\\projects\\pr4\\pr4_net.core\\ftpwpf\\auth.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{94BDBB9A-0E4A-4223-8D19-B6811F31CCEB}|FtpWPF\\FtpWPF.csproj|solutionrelative:ftpwpf\\auth.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -33,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{94BDBB9A-0E4A-4223-8D19-B6811F31CCEB}|FtpWPF\\FtpWPF.csproj|e:\\projects\\pr4\\pr4_net.core\\ftpwpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{94BDBB9A-0E4A-4223-8D19-B6811F31CCEB}|FtpWPF\\FtpWPF.csproj|solutionrelative:ftpwpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{94BDBB9A-0E4A-4223-8D19-B6811F31CCEB}|FtpWPF\\FtpWPF.csproj|e:\\projects\\pr4\\pr4_net.core\\ftpwpf\\main.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{94BDBB9A-0E4A-4223-8D19-B6811F31CCEB}|FtpWPF\\FtpWPF.csproj|solutionrelative:ftpwpf\\main.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,7 +54,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ViewModelSend.cs",
               "DocumentMoniker": "E:\\projects\\PR4\\PR4_NET.Core\\Common\\ViewModelSend.cs",
               "RelativeDocumentMoniker": "Common\\ViewModelSend.cs",
@@ -62,8 +62,7 @@
               "RelativeToolTip": "Common\\ViewModelSend.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T14:43:26.779Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T14:43:26.779Z"
             },
             {
               "$type": "Document",
@@ -73,14 +72,14 @@
               "RelativeDocumentMoniker": "FtpWPF\\main.xaml.cs",
               "ToolTip": "E:\\projects\\PR4\\PR4_NET.Core\\FtpWPF\\main.xaml.cs",
               "RelativeToolTip": "FtpWPF\\main.xaml.cs",
-              "ViewState": "AgIAAM0AAAAAAAAAAAASwKMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAPMAAAAAAAAAAAAQwOsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-27T14:31:35.988Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "main.xaml",
               "DocumentMoniker": "E:\\projects\\PR4\\PR4_NET.Core\\FtpWPF\\main.xaml",
               "RelativeDocumentMoniker": "FtpWPF\\main.xaml",
@@ -92,19 +91,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "E:\\projects\\PR4\\PR4_NET.Core\\FtpWPF\\MainWindow.xaml",
               "RelativeDocumentMoniker": "FtpWPF\\MainWindow.xaml",
               "ToolTip": "E:\\projects\\PR4\\PR4_NET.Core\\FtpWPF\\MainWindow.xaml",
               "RelativeToolTip": "FtpWPF\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-27T14:28:53.803Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T14:28:53.803Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "E:\\projects\\PR4\\PR4_NET.Core\\FtpWPF\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "FtpWPF\\MainWindow.xaml.cs",
@@ -112,12 +110,11 @@
               "RelativeToolTip": "FtpWPF\\MainWindow.xaml.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAACIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T14:28:04.794Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T14:28:04.794Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "auth.xaml.cs",
               "DocumentMoniker": "E:\\projects\\PR4\\PR4_NET.Core\\FtpWPF\\auth.xaml.cs",
               "RelativeDocumentMoniker": "FtpWPF\\auth.xaml.cs",
@@ -125,24 +122,22 @@
               "RelativeToolTip": "FtpWPF\\auth.xaml.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAqwCwAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T14:27:23.245Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T14:27:23.245Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "auth.xaml",
               "DocumentMoniker": "E:\\projects\\PR4\\PR4_NET.Core\\FtpWPF\\auth.xaml",
               "RelativeDocumentMoniker": "FtpWPF\\auth.xaml",
               "ToolTip": "E:\\projects\\PR4\\PR4_NET.Core\\FtpWPF\\auth.xaml",
               "RelativeToolTip": "FtpWPF\\auth.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-27T14:27:27.372Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T14:27:27.372Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\projects\\PR4\\PR4_NET.Core\\Client\\Program.cs",
               "RelativeDocumentMoniker": "Client\\Program.cs",
@@ -150,12 +145,11 @@
               "RelativeToolTip": "Client\\Program.cs",
               "ViewState": "AgIAAJ4AAAAAAAAAAAAIwGsAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T14:27:05.517Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T14:27:05.517Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\projects\\PR4\\PR4_NET.Core\\Server\\Program.cs",
               "RelativeDocumentMoniker": "Server\\Program.cs",
@@ -163,8 +157,7 @@
               "RelativeToolTip": "Server\\Program.cs",
               "ViewState": "AgIAADsAAAAAAAAAAAAIwMwAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T14:26:28.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T14:26:28.041Z"
             }
           ]
         }

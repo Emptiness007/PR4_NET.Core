@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Common;
 using Newtonsoft.Json;
+using static System.Net.WebRequestMethods;
 
 namespace FtpWPF
 {
@@ -25,6 +26,7 @@ namespace FtpWPF
     {
 
         private static List<string> allFolders = new List<string>();
+        private static string currDir;
 
         public main()
         {
@@ -74,33 +76,6 @@ namespace FtpWPF
             }
         }
 
-        private void GetCurrentDirectory(string dir)
-        {
-            IPEndPoint endPoint = new IPEndPoint(Client.Program.IPAddress, Client.Program.Port);
-            Socket socket = new Socket(
-                AddressFamily.InterNetwork,
-                SocketType.Stream,
-                ProtocolType.Tcp);
-            socket.Connect(endPoint);
-
-            if (socket.Connected)
-            {
-                string message = "cd " + dir;
-                ViewModelSend viewModelSend = new ViewModelSend(message, 1);
-                byte[] messageByte = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(viewModelSend));
-                int BytesSend = socket.Send(messageByte);
-                byte[] bytes = new byte[10485760];
-                int BytesRec = socket.Receive(bytes);
-                string messageServer = Encoding.UTF8.GetString(bytes, 0, BytesRec);
-                ViewModelMessage viewModelMessage = JsonConvert.DeserializeObject<ViewModelMessage>(messageServer);
-                allFolders = JsonConvert.DeserializeObject<List<string>>(viewModelMessage.Data);
-                foreach (string Name in allFolders)
-                {
-                    System.Windows.MessageBox.Show(Name);
-                }
-            }
-            socket.Close();
-        }
 
 
         private void TreeViewFolders(object sender, MouseButtonEventArgs e)
@@ -109,7 +84,36 @@ namespace FtpWPF
 
         private void DownloadFiles(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+                openFileDialog.Filter = "Все файлы (*.*)|*.*";
 
+                bool? result = openFileDialog.ShowDialog();
+                if (result == true)
+                {
+                    string selectedFilePath = openFileDialog.FileName;
+
+                    string currentDirectory = currDir;
+
+                    if (!string.IsNullOrEmpty(currentDirectory))
+                    {
+                        string destinationPath = System.IO.Path.Combine(currentDirectory, System.IO.Path.GetFileName(selectedFilePath));
+
+                        System.IO.File.Copy(selectedFilePath, destinationPath, true);
+
+                        MessageBox.Show($"Файл {System.IO.Path.GetFileName(selectedFilePath)} был успешно добавлен в директорию {currentDirectory}");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не удалось определить текущую директорию.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при добавлении файла: {ex.Message}");
+            }
         }
 
         private void SaveFile(object sender, RoutedEventArgs e)
@@ -160,34 +164,93 @@ namespace FtpWPF
                     var textBlock = stackPanel.Children[1] as TextBlock;
                     if (textBlock != null)
                     {
-                        string directoryName = textBlock.Text;
+                        string name = textBlock.Text;
 
-                        string currentPath = GetCurrentDirectoryPath(directoryName);
+                        string parentPath = GetCurrentPath(clickedItem);
 
-                        if (clickedItem.Items.Count == 0)
+                        string fullPath = System.IO.Path.Combine(parentPath, name);
+
+                        if (Directory.Exists(fullPath) && clickedItem.Items.Count == 0)
                         {
-                            AddSubDirectories(clickedItem, currentPath);
+                            AddSubDirectories(clickedItem, fullPath);
+                        }
+                        else if (System.IO.File.Exists(fullPath))
+                        {
+                            OpenFile(fullPath);
                         }
                     }
                 }
             }
         }
 
-        private string GetCurrentDirectoryPath(string directoryName)
+        private string GetCurrentPath(TreeViewItem item)
         {
-            return System.IO.Path.Combine(@"D:\", directoryName);
+            string path = string.Empty;
+
+            while (item != null && item.Parent != null)
+            {
+                var parentItem = item.Parent as TreeViewItem;
+                if (parentItem != null)
+                {
+                    var stackPanel = parentItem.Header as StackPanel;
+                    if (stackPanel != null && stackPanel.Children.Count >= 2)
+                    {
+                        var textBlock = stackPanel.Children[1] as TextBlock;
+                        if (textBlock != null)
+                        {
+                            path = System.IO.Path.Combine(textBlock.Text, path);
+                        }
+                    }
+                }
+                item = item.Parent as TreeViewItem;
+            }
+
+            if (!string.IsNullOrEmpty(path))
+            {
+                path = System.IO.Path.Combine(@"D:\", path);
+            }
+            return path;
         }
+
+
+
 
         private void AddSubDirectories(TreeViewItem parentItem, string directoryPath)
         {
             try
             {
+                IPEndPoint endPoint = new IPEndPoint(Client.Program.IPAddress, Client.Program.Port);
+                Socket socket = new Socket(
+                    AddressFamily.InterNetwork,
+                    SocketType.Stream,
+                    ProtocolType.Tcp);
+                socket.Connect(endPoint);
+                path.Text = directoryPath;
+                currDir = directoryPath;
+                if (socket.Connected)
+                {
+                    string message = "cd " + directoryPath;
+                    ViewModelSend viewModelSend = new ViewModelSend(message, MainWindow.Id);
+                    byte[] messageByte = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(viewModelSend));
+                    int BytesSend = socket.Send(messageByte);
+                    byte[] bytes = new byte[10485760];
+                    int BytesRec = socket.Receive(bytes);
+                    string messageServer = Encoding.UTF8.GetString(bytes, 0, BytesRec);
+                }
+                socket.Close();
                 string[] subdirectories = Directory.GetDirectories(directoryPath);
+                string[] files = Directory.GetFiles(directoryPath);
 
                 foreach (var subdirectory in subdirectories)
                 {
                     string subdirectoryName = System.IO.Path.GetFileName(subdirectory);
-                    AddTreeViewItemWithIconToParent(parentItem, subdirectoryName);
+                    AddTreeViewItemWithIconToParent(parentItem, subdirectoryName, true);
+                }
+
+                foreach (var file in files)
+                {
+                    string fileName = System.IO.Path.GetFileName(file);
+                    AddTreeViewItemWithIconToParent(parentItem, fileName, false);
                 }
             }
             catch (Exception ex)
@@ -196,11 +259,34 @@ namespace FtpWPF
             }
         }
 
-        private void AddTreeViewItemWithIconToParent(TreeViewItem parentItem, string subdirectoryName)
+        private void OpenFile(string filePath)
         {
-            TreeViewItem subItem = new TreeViewItem
+            try
             {
-                Tag = subdirectoryName
+                if (System.IO.File.Exists(filePath))
+                {
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = filePath,
+                        UseShellExecute = true
+                    });
+                }
+                else
+                {
+                    MessageBox.Show("Файл не существует!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при открытии файла: {ex.Message}");
+            }
+        }
+
+        private void AddTreeViewItemWithIconToParent(TreeViewItem parentItem, string name, bool isDirectory)
+        {
+            TreeViewItem newItem = new TreeViewItem
+            {
+                Tag = name
             };
 
             StackPanel stackPanel = new StackPanel
@@ -208,11 +294,19 @@ namespace FtpWPF
                 Orientation = Orientation.Horizontal
             };
 
-            Wpf.Ui.Controls.SymbolIcon icon = new Wpf.Ui.Controls.SymbolIcon(Wpf.Ui.Controls.SymbolRegular.Folder24);
+            Wpf.Ui.Controls.SymbolIcon icon;
+            if (isDirectory)
+            {
+                icon = new Wpf.Ui.Controls.SymbolIcon(Wpf.Ui.Controls.SymbolRegular.Folder24);
+            }
+            else
+            {
+                icon = new Wpf.Ui.Controls.SymbolIcon(Wpf.Ui.Controls.SymbolRegular.Document24);
+            }
 
             TextBlock textBlock = new TextBlock
             {
-                Text = subdirectoryName,
+                Text = name,
                 Foreground = System.Windows.Media.Brushes.White,
                 FontFamily = new System.Windows.Media.FontFamily("Consolas"),
                 Margin = new System.Windows.Thickness(5, 0, 0, 0)
@@ -221,10 +315,10 @@ namespace FtpWPF
             stackPanel.Children.Add(icon);
             stackPanel.Children.Add(textBlock);
 
-            subItem.Header = stackPanel;
-            subItem.MouseDoubleClick += TreeViewItem_Click;
+            newItem.Header = stackPanel;
+            newItem.MouseDoubleClick += TreeViewItem_Click;
 
-            parentItem.Items.Add(subItem);
+            parentItem.Items.Add(newItem);
         }
 
     }
