@@ -173,8 +173,8 @@ namespace Server
                                     else
                                         getFile += " " + DataMessage[i];
                                 }
-                                byte[] byteFile = File.ReadAllBytes(user.temp_src + getFile);
-                                Console.WriteLine(user.temp_src + getFile);
+                                byte[] byteFile = File.ReadAllBytes(getFile);
+                                Console.WriteLine(getFile);
                                 viewModelMessage = new ViewModelMessage("file", JsonConvert.SerializeObject(byteFile));
                             }
                             else

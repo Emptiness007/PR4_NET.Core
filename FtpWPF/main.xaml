@@ -24,7 +24,6 @@
             </TreeView>
         </ScrollViewer>
         <ui:Button Content="Сохранить" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,10" Background="#B2000000" Click="DownloadFiles"/>
-        <ui:Button Content="Загрузить" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,110,10" Background="#B2000000" Click="SaveFile"/>
         <Image x:Name="bottomGif" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="70" Height="70" />
     </Grid>
 </Page>

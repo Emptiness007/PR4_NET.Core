@@ -103,7 +103,44 @@ namespace FtpWPF
 
                         System.IO.File.Copy(selectedFilePath, destinationPath, true);
 
+                        IPEndPoint endPoint = new IPEndPoint(Client.Program.IPAddress, Client.Program.Port);
+                        Socket socket = new Socket(
+                            AddressFamily.InterNetwork,
+                            SocketType.Stream,
+                            ProtocolType.Tcp);
+                        socket.Connect(endPoint);
+
+                        if (socket.Connected)
+                        {
+                            byte[] fileData = System.IO.File.ReadAllBytes(selectedFilePath);
+
+                            FileInfoFTP fileInfo = new FileInfoFTP(fileData, System.IO.Path.GetFileName(selectedFilePath));
+                           
+                            string jsonData = JsonConvert.SerializeObject(fileInfo);
+
+                            ViewModelSend viewModelSend = new ViewModelSend(jsonData, MainWindow.Id);
+                            byte[] messageByte = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(viewModelSend));
+                            int BytesSend = socket.Send(messageByte);
+                            byte[] bytes = new byte[10485760];
+                            int BytesRec = socket.Receive(bytes);
+                            string messageServer = Encoding.UTF8.GetString(bytes, 0, BytesRec);
+                        }
+                        socket.Close();
+
                         MessageBox.Show($"Файл {System.IO.Path.GetFileName(selectedFilePath)} был успешно добавлен в директорию {currentDirectory}");
+
+                        TreeViewItem parentItem = GetTreeViewItemByPath(currentDirectory);
+
+                        if (parentItem != null)
+                        {
+                            AddTreeViewItemWithIconToParent(parentItem, System.IO.Path.GetFileName(selectedFilePath), false);
+                        }
+                        else
+                        {
+                            AddTreeViewItemWithIcon(currentDirectory);
+                            parentItem = GetTreeViewItemByPath(currentDirectory);
+                            AddTreeViewItemWithIconToParent(parentItem, System.IO.Path.GetFileName(selectedFilePath), false);
+                        }
                     }
                     else
                     {
@@ -122,13 +159,41 @@ namespace FtpWPF
 
         }
 
+        private TreeViewItem GetTreeViewItemByPath(string path)
+        {
+            TreeViewItem item = FindTreeViewItemByPath(treeViewFolders.Items, path);
+            if (item == null){}
+            return item;
+        }
+
+        private TreeViewItem FindTreeViewItemByPath(ItemCollection items, string path)
+        {
+            foreach (var item in items)
+            {
+                TreeViewItem treeViewItem = item as TreeViewItem;
+                if (treeViewItem != null)
+                {
+                    if (treeViewItem.Tag.ToString() == path)
+                    {
+                        return treeViewItem;
+                    }
+
+                    TreeViewItem foundItem = FindTreeViewItemByPath(treeViewItem.Items, path);
+                    if (foundItem != null)
+                    {
+                        return foundItem;
+                    }
+                }
+            }
+            return null;
+        }
+
         private void AddTreeViewItemWithIcon(string name)
         {
             TreeViewItem newItem = new TreeViewItem
             {
                 Tag = name
             };
-
             StackPanel stackPanel = new StackPanel
             {
                 Orientation = Orientation.Horizontal
@@ -266,6 +331,24 @@ namespace FtpWPF
             {
                 if (System.IO.File.Exists(filePath))
                 {
+                    IPEndPoint endPoint = new IPEndPoint(Client.Program.IPAddress, Client.Program.Port);
+                    Socket socket = new Socket(
+                        AddressFamily.InterNetwork,
+                        SocketType.Stream,
+                        ProtocolType.Tcp);
+                    socket.Connect(endPoint);
+
+                    if (socket.Connected)
+                    {
+                        string message = "get " + filePath;
+                        ViewModelSend viewModelSend = new ViewModelSend(message, MainWindow.Id);
+                        byte[] messageByte = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(viewModelSend));
+                        int BytesSend = socket.Send(messageByte);
+                        byte[] bytes = new byte[10485760];
+                        int BytesRec = socket.Receive(bytes);
+                        string messageServer = Encoding.UTF8.GetString(bytes, 0, BytesRec);
+                    }
+                    socket.Close();
 
                     System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
                     {
@@ -331,10 +414,8 @@ namespace FtpWPF
                 TreeViewItem treeViewItem = item as TreeViewItem;
                 if (treeViewItem != null)
                 {
-                    // Рекурсивно обрабатываем вложенные дочерние элементы
                     RemoveChildDirectories(treeViewItem.Items);
 
-                    // Удаляем все дочерние элементы этого узла
                     treeViewItem.Items.Clear();
                 }
             }
