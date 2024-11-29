@@ -17,7 +17,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="Текущий путь: " Foreground="White" FontFamily="Consolas" FontSize="14" Grid.Column="0" VerticalAlignment="Bottom"/>
-            <TextBlock x:Name="path" Text="путь " Foreground="White" FontFamily="Consolas" FontSize="14" Grid.Column="1" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="path" Text="путь " MouseDown="GoBack" Foreground="White" FontFamily="Consolas" FontSize="14" Grid.Column="1" VerticalAlignment="Bottom"/>
         </Grid>
         <ScrollViewer Margin="0,70,0,50" VerticalScrollBarVisibility="Auto">
             <TreeView Name="treeViewFolders"  AllowDrop="True" Background="Transparent" >

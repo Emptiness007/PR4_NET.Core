@@ -45,6 +45,7 @@ namespace FtpWPF
             SendMessage();
         }
 
+
         private void SendMessage()
         {
             try
@@ -169,7 +170,7 @@ namespace FtpWPF
                         string parentPath = GetCurrentPath(clickedItem);
 
                         string fullPath = System.IO.Path.Combine(parentPath, name);
-
+                        
                         if (Directory.Exists(fullPath) && clickedItem.Items.Count == 0)
                         {
                             AddSubDirectories(clickedItem, fullPath);
@@ -265,11 +266,13 @@ namespace FtpWPF
             {
                 if (System.IO.File.Exists(filePath))
                 {
+
                     System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
                     {
                         FileName = filePath,
                         UseShellExecute = true
                     });
+                    
                 }
                 else
                 {
@@ -321,6 +324,49 @@ namespace FtpWPF
             parentItem.Items.Add(newItem);
         }
 
+        private void RemoveChildDirectories(ItemCollection items)
+        {
+            foreach (var item in items)
+            {
+                TreeViewItem treeViewItem = item as TreeViewItem;
+                if (treeViewItem != null)
+                {
+                    // Рекурсивно обрабатываем вложенные дочерние элементы
+                    RemoveChildDirectories(treeViewItem.Items);
+
+                    // Удаляем все дочерние элементы этого узла
+                    treeViewItem.Items.Clear();
+                }
+            }
+        }
+
+        private void GoBack(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(currDir) && currDir != @"D:\")
+                {
+                    string parentDir = System.IO.Directory.GetParent(currDir)?.FullName;
+
+                    if (parentDir != null)
+                    {
+                        currDir = parentDir;
+                        path.Text = currDir;
+
+                        RemoveChildDirectories(treeViewFolders.Items);
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("You are already at the root directory!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error when navigating back: {ex.Message}");
+            }
+        }
     }
 
 }

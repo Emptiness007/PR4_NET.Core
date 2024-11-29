@@ -142,7 +142,7 @@ namespace Server
                                         else
                                             cdFolder += " " + DataMessage[i];
                                     }
-                                    user.temp_src = user.temp_src + cdFolder;
+                                    user.temp_src = cdFolder;
                                     userContext.SaveChanges();
                                     FolderFiles = GetDirectory(user.temp_src);
                                 }
