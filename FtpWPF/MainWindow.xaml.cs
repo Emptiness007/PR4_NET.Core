@@ -130,10 +130,7 @@ namespace FtpWPF
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.RightButton == MouseButtonState.Pressed || e.LeftButton == MouseButtonState.Pressed)
-            {
-                this.DragMove();
-            }
+
         }
 
         private void ToggleFullScreen_Click(object sender, RoutedEventArgs e)

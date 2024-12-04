@@ -17,11 +17,12 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="Текущий путь: " Foreground="White" FontFamily="Consolas" FontSize="14" Grid.Column="0" VerticalAlignment="Bottom"/>
-            <TextBlock x:Name="path" Text="путь " MouseDown="GoBack" Foreground="White" FontFamily="Consolas" FontSize="14" Grid.Column="1" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="path" KeyDown="GetPath" Background="Transparent" BorderBrush="Transparent" Text="5000" Foreground="White" FontFamily="Consolas" Padding="0" VerticalContentAlignment="Bottom" Margin="0,0,10,0" Grid.Column="1"/>
         </Grid>
         <ScrollViewer Margin="0,70,0,50" VerticalScrollBarVisibility="Auto">
-            <TreeView Name="treeViewFolders"  AllowDrop="True" Background="Transparent" >
-            </TreeView>
+            <ListBox Background="Transparent" Name="treeViewFolders" AllowDrop="True">
+                
+            </ListBox>
         </ScrollViewer>
         <ui:Button Content="Сохранить" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,10" Background="#B2000000" Click="DownloadFiles"/>
         <Image x:Name="bottomGif" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="70" Height="70" />
